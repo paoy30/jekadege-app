@@ -1,0 +1,31 @@
+.companylogos {
+  padding: 1rem;
+  margin-block: 3rem;
+
+  .container {
+    // Style di bawah ini tidak akan diterapkan langsung ke logo di dalam Marquee,
+    // jadi kita akan menargetkan 'img' secara spesifik.
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // justify-content: space-evenly;
+    // gap: 4rem;
+    // row-gap: 6rem;
+
+    // Tambahkan style ini untuk memberi jarak pada setiap logo
+    img {
+      margin-right: 6rem; // Anda bisa sesuaikan jarak ini sesuai kebutuhan
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .companylogos {
+  padding: 1rem;
+  margin-block: 1rem;
+  img {
+      width:40px ;
+    }
+}
+}

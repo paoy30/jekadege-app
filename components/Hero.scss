@@ -1,0 +1,122 @@
+.hero {
+  padding: 88rem;
+  width: 100%;
+  height: 100%;
+  //   min-height: calc(100vh - 65px);
+  p {
+    color: #fff;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 85px);
+    border-radius: 0.5rem;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.714)), url('/img/THUMBNILE JKDG.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .text {
+      position: absolute;
+      bottom: 2rem;
+      left: 1rem;
+      width: 100%;
+
+      h1 {
+        font-size: 10rem;
+        line-height: 1;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 1.8rem;
+        max-width: 700px;
+      }
+
+      &-desc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 2rem;
+        gap: 2rem;
+
+        button {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .hero {
+    .container {
+      background-position: bottom;
+
+      .text {
+        h1 {
+          font-size: 9rem;
+          margin-bottom: 2rem;
+        }
+        &-desc {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    .container {
+      .text {
+        h1 {
+          font-size: 5rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.hero .container {
+  position: relative; // tidak mengubah size, hanya konteks posisi untuk anak absolute
+}
+
+.hero-slider {
+  position: absolute;
+  inset: 0; // penuhi seluruh area container
+  z-index: 0;
+}
+
+.hero-swiper,
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // penuhi container tanpa merusak aspect ratio
+}
+
+/* Optional: gaya minimal untuk pagination agar terlihat di atas gambar */
+.hero-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}

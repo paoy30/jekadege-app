@@ -1,0 +1,65 @@
+/* convert from SCSS to plain CSS, maintain behavior to fill container without changing its size */
+
+.hero {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .container {
+    position: relative;
+    /* only to anchor children; does not change size */
+    min-height: 100vh;
+    /* fallback only; if parent already sets height, this won't override it */
+}
+
+@media (max-width: 980px) {
+    .hero .container {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero .container {
+        min-height: 190px;
+    }
+}
+
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    /* fill the container fully */
+    z-index: 0;
+}
+
+.hero-swiper,
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.hero-slide-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* make image fill the previous container area */
+}
+
+/* Minimal UI polish for controls over images */
+.hero-swiper .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+    color: #fff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
